@@ -1,82 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Star Clinic - Coming Soon</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            max-width: 500px;
-        }
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-        .email-box {
-            display: flex;
-            justify-content: center;
-        }
-        input[type="email"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-            width: 70%;
-        }
-        button {
-            padding: 10px 15px;
-            border: none;
-            background: #fff;
-            color: #27ae60;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            background: #f1f1f1;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 12px;
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Green Star Clinic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #0b8f4d;
+      color: white;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Section */
+    .main {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .main img {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer a {
+      color: #0b8f4d;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Green Star Clinic</h1>
-    <h2>🌿 Coming Soon</h2>
-    <p>We are working hard to bring you quality healthcare services. Stay tuned!</p>
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="logo">Green Star Clinic</div>
+    <div class="nav-links">
+      <a href="#">About Us</a>
+      <a href="#">Our Services</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
 
-    <div class="email-box">
-        <input type="email" placeholder="Enter your email">
-        <button>Notify Me</button>
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Welcome to Green Star Clinic</h1>
+    <p>Your trusted healthcare partner. We provide quality medical services with care and professionalism.</p>
+    
+    <img src="https://via.placeholder.com/300x200" alt="Clinic Image">
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>📍 Kathmandu, Nepal</p>
+    <p>📞 +977-9800000000 | ✉ info@greenstarclinic.com</p>
+
+    <div>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
     </div>
 
-    <footer>
-        © 2026 Green Star Clinic. All rights reserved.
-    </footer>
-</div>
+    <p style="margin-top:10px;">© 2026 Green Star Clinic. All rights reserved.</p>
+  </div>
 
 </body>
 </html>

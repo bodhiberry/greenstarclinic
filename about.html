@@ -26,7 +26,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--light-bg);
             overflow-x: hidden;
@@ -51,7 +51,6 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            z-index: 1001;
         }
 
         .clinic-logo {
@@ -64,15 +63,15 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary-green);
+            line-height: 1.1;
         }
 
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--primary-green);
-            cursor: pointer;
-            z-index: 1001;
+        .brand-slogan {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--secondary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav ul {
@@ -92,29 +91,27 @@
         nav ul li a:hover { color: var(--primary-green); }
 
         /* --- Page Header --- */
-        .page-title-area {
+        .page-header {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-blue) 100%);
-            padding: 80px 6%;
+            padding: 70px 6%;
             color: white;
             text-align: center;
         }
 
-        .page-title-area h1 { font-size: 2.8rem; letter-spacing: -1px; }
+        .page-header h1 { font-size: 2.8rem; margin-bottom: 10px; }
 
         /* --- Content Layout --- */
-        .main-container {
-            max-width: 1100px;
-            margin: -40px auto 60px;
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
             padding: 0 6%;
-            position: relative;
-            z-index: 10;
         }
 
         .card {
-            background: white;
+            background: var(--white);
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
             margin-bottom: 40px;
         }
 
@@ -124,35 +121,190 @@
             font-size: 1.8rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+        }
+
+        .card h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background: var(--light-bg);
         }
 
         .card p {
             margin-bottom: 20px;
+            color: #4a5568;
             font-size: 1.05rem;
-            color: #444;
             text-align: justify;
         }
 
-        /* --- Quote Styling --- */
+        /* --- Message Box Upgrade --- */
         .message-box {
-            border-top: 8px solid var(--accent-green);
+            border-top: 5px solid var(--primary-green);
+            background: #fdfdfd;
         }
 
-        .quote-icon {
-            font-size: 3rem;
+        .quote-top {
+            font-size: 2.5rem;
             color: var(--accent-green);
-            opacity: 0.3;
-            margin-bottom: -20px;
+            opacity: 0.4;
+            margin-bottom: -10px;
         }
 
-        .signature {
+        .signature-block {
             margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid #eee;
+            padding-top: 30px;
+            border-top: 1px dashed #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
 
-        .signature strong {
-            display: block;
-            color: var(--primary-green);
+        .sig-name {
             font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .sig-title {
+            color: var(--secondary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .sig-loc {
+            font-size: 0.8rem;
+            color: #718096;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #05140f;
+            color: var(--white);
+            padding: 60px 6% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 { color: var(--accent-green); margin-bottom: 20px; font-size: 1rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #b7e4c7; text-decoration: none; font-size: 0.9rem; transition: 0.2s; }
+        .footer-links a:hover { color: white; padding-left: 5px; }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: #74c69d;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 1.5rem; }
+            nav ul { margin-top: 20px; gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .card { padding: 30px; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-container">
+            <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
+            <div class="brand-text">
+                <span class="brand-name">Greenstar Clinic</span>
+                <span class="brand-slogan">Excellence in Diagnostics</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Dedicated to Your Health</h1>
+    </section>
+
+    <div class="container">
+        <article class="card">
+            <h2>Our Clinic</h2>
+            <p>
+                <strong>Greenstar Clinic & Diagnostic Center Pvt. Ltd.</strong> is a premier healthcare institution committed to precision and reliability. Based in Basundhara, Kathmandu, we serve as a vital link for individuals preparing for foreign employment, ensuring they meet health standards with confidence.
+            </p>
+            <p>
+                Our facility is equipped with high-end diagnostic technology, managed by a team of experienced clinicians. We prioritize patient-centered care, emphasizing transparency, confidentiality, and technical excellence in every report we issue.
+            </p>
+        </article>
+
+        <article class="card message-box">
+            <i class="fa-solid fa-quote-left quote-top"></i>
+            <h2>Message from the Chairperson</h2>
+            <p>It is my privilege to welcome you to Greenstar Clinic and Diagnostic Center.</p>
+            <p>
+                For many in Nepal, foreign employment is more than a job—it is a foundation for a better future. We established Greenstar with the weight of that responsibility in mind. Our mission is to provide an ethical, reliable, and world-class medical examination process that our clients and international partners can trust implicitly.
+            </p>
+            <p>
+                We believe that integrity and modern science must go hand-in-hand. By investing in modern diagnostic tools and a dedicated professional team, we ensure that every individual who walks through our doors receives the highest standard of attention and accurate medical reporting.
+            </p>
+            <p>
+                Our commitment goes beyond simple compliance; we strive for efficiency and compassion. We are here to support our youth on their journey abroad by making the medical clearance process as smooth and credible as possible.
+            </p>
+            
+            <div class="signature-block">
+                <span class="sig-name">Shankar Babu Karki</span>
+                <span class="sig-title">Chairperson</span>
+                <span class="sig-loc">Greenstar Clinic and Diagnostic Center Pvt. Ltd.</span>
+                <span class="sig-loc">Basundhara, Kathmandu, Nepal</span>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Quick Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Details</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +977-1-4974339</li>
+                    <li><i class="fas fa-mobile-alt"></i> +977 9764582339</li>
+                    <li><i class="fas fa-envelope"></i> info.greenstar@example.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="#" style="color:#b7e4c7; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="color:#b7e4c7; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color:#b7e4c7; font-size: 1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics.
+        </div>
+    </footer>
+
+</body>
+</html>

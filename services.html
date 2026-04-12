@@ -6,7 +6,6 @@
     <title>Our Services | Greenstar Clinic & Diagnostic Center</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
@@ -32,7 +31,7 @@
             background-color: var(--light-bg);
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
         }
 
@@ -77,6 +76,7 @@
             font-size: 0.75rem;
             color: var(--secondary-blue);
             font-weight: 600;
+            font-size: 0.7rem;
             text-transform: uppercase;
         }
 
@@ -94,129 +94,156 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--primary-green);
-        }
+        nav ul li a:hover { color: var(--primary-green); }
 
         /* --- Page Header --- */
         .page-header {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-blue) 100%);
-            padding: 60px 6%;
+            padding: 70px 6%;
             color: white;
             text-align: center;
         }
 
         .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
         }
 
         .page-header p {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             opacity: 0.9;
+            font-size: 1.1rem;
         }
 
         /* --- Services Grid --- */
         .services-container {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 80px auto;
             padding: 0 6%;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 50px 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
             text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            border-bottom: 4px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: var(--secondary-blue);
+            transform: scaleX(0);
+            transition: 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            border-bottom-color: var(--secondary-blue);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            border-color: #e2e8f0;
         }
 
+        .service-card:hover::before { transform: scaleX(1); }
+
         .service-card i {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: var(--primary-green);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            display: inline-block;
         }
 
         .service-card h3 {
-            color: var(--text-dark);
+            color: var(--primary-green);
             margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         .service-card p {
             font-size: 0.95rem;
-            color: #555;
+            color: #4a5568;
+            line-height: 1.6;
         }
 
         /* --- Commitment Section --- */
         .commitment-section {
             background-color: var(--primary-green);
+            background-image: linear-gradient(rgba(45, 106, 79, 0.9), rgba(45, 106, 79, 0.9)), url('pattern.png'); /* Add a subtle pattern if available */
             color: white;
-            padding: 80px 6%;
-            margin-top: 80px;
+            padding: 100px 6%;
+            margin-top: 100px;
         }
 
         .commitment-content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .commitment-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .commitment-header h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--accent-green);
+            margin-bottom: 10px;
         }
 
         .commitment-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .commitment-item {
             display: flex;
             gap: 20px;
             align-items: flex-start;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .commitment-item:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .commitment-item i {
             color: var(--accent-green);
-            font-size: 1.5rem;
-            margin-top: 5px;
+            font-size: 1.8rem;
         }
 
         .commitment-item h4 {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--accent-green);
+            font-size: 1.1rem;
+        }
+
+        .commitment-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
         /* --- Footer --- */
         footer {
             background-color: #05140f;
             color: var(--white);
-            padding: 70px 6% 30px;
+            padding: 80px 6% 30px;
         }
 
         .footer-grid {
@@ -229,46 +256,36 @@
         .footer-section h3 {
             color: var(--accent-green);
             margin-bottom: 25px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a, .contact-info span {
             color: #b7e4c7;
             text-decoration: none;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
 
-        .footer-links a:hover {
-            color: var(--white);
-            padding-left: 5px;
-        }
+        .footer-links a:hover { color: var(--white); padding-left: 8px; }
 
         .contact-item {
             display: flex;
             gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #d8f3dc;
+            margin-bottom: 18px;
+            align-items: center;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
+        .contact-item i { color: var(--secondary-blue); font-size: 1.1rem; }
+
+        .social-links { display: flex; gap: 15px; margin-top: 25px; }
 
         .social-btn {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
@@ -276,11 +293,12 @@
             border-radius: 50%;
             color: white;
             transition: 0.3s;
+            text-decoration: none;
         }
 
         .social-btn:hover {
             background: var(--secondary-blue);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .copyright {
@@ -292,8 +310,10 @@
         }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 20px; }
-            .commitment-list { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; padding: 1.5rem; }
+            nav ul { margin-top: 20px; gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .page-header h1 { font-size: 2.2rem; }
+            .commitment-item { padding: 20px; }
         }
     </style>
 </head>
@@ -303,7 +323,7 @@
         <div class="brand-container">
             <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
             <div class="brand-text">
-                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
+                <span class="brand-name">Greenstar Clinic</span>
                 <span class="brand-slogan">Excellence in Diagnostics</span>
             </div>
         </div>
@@ -313,14 +333,14 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="page-header">
-        <h1>Our Services</h1>
-        <p>At Greenstar Clinic & Diagnostic Center Pvt. Ltd., we provide quality medical examination services designed to meet the requirements of foreign employment with accuracy and efficiency.</p>
+        <h1>Our Specialized Services</h1>
+        <p>Expert diagnostic solutions tailored to your professional journey and health needs.</p>
     </section>
 
     <main class="services-container">
@@ -328,31 +348,37 @@
             <div class="service-card">
                 <i class="fa-solid fa-passport"></i>
                 <h3>Foreign Employment Exams</h3>
-                <p>Reliable and high-quality medical tests tailored specifically for those seeking career opportunities abroad.</p>
+                <p>Thorough medical screenings designed to meet the strict visa and health requirements of countries worldwide for Nepali professionals.</p>
             </div>
 
             <div class="service-card">
                 <i class="fa-solid fa-file-medical"></i>
                 <h3>Compliant Reports</h3>
-                <p>Fast, accurate, and internationally compliant diagnostic reports that meet all regulatory standards.</p>
+                <p>We provide diagnostic reports that are fully recognized by government authorities and international regulatory bodies.</p>
             </div>
 
             <div class="service-card">
-                <i class="fa-solid fa-truck-fast"></i>
-                <h3>Timely Delivery</h3>
-                <p>Enjoy hassle-free service with our commitment to assured on-time report delivery every single time.</p>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Timely Turnaround</h3>
+                <p>Your time is valuable. We optimize our lab processes to ensure your results are ready exactly when you need them.</p>
             </div>
 
             <div class="service-card">
                 <i class="fa-brands fa-whatsapp"></i>
-                <h3>Digital Delivery</h3>
-                <p>Get your reports delivered conveniently via Email and WhatsApp as soon as they are ready.</p>
+                <h3>Digital Report Access</h3>
+                <p>No need to wait in line. Receive verified digital copies of your reports via WhatsApp or Email for instant access.</p>
             </div>
 
             <div class="service-card">
                 <i class="fa-solid fa-microscope"></i>
-                <h3>Modern Technology</h3>
-                <p>We use advanced laboratory equipment and the latest modern diagnostic technology for precision results.</p>
+                <h3>Advanced Diagnostics</h3>
+                <p>Utilizing high-precision automated laboratory systems to minimize human error and ensure clinical accuracy.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h3>Counseling & Care</h3>
+                <p>Post-examination consultations to help you understand your reports and guide you toward better health outcomes.</p>
             </div>
         </div>
     </main>
@@ -360,44 +386,30 @@
     <section class="commitment-section">
         <div class="commitment-content">
             <div class="commitment-header">
-                <h2>Our Commitment</h2>
-                <p>We take pride in being your trusted partner for medical examinations.</p>
+                <h2>Our Commitment to You</h2>
+                <p>Setting the gold standard for diagnostic care in Basundhara.</p>
             </div>
 
             <div class="commitment-list">
                 <div class="commitment-item">
-                    <i class="fa-solid fa-check-circle"></i>
+                    <i class="fa-solid fa-circle-check"></i>
                     <div>
-                        <h4>Quality Service</h4>
-                        <p>Accurate, reliable, and timely medical examinations are our top priority.</p>
+                        <h4>Quality Guarantee</h4>
+                        <p>We use calibrated instruments and strict quality control to ensure 100% reliable results.</p>
                     </div>
                 </div>
                 <div class="commitment-item">
-                    <i class="fa-solid fa-shield-halved"></i>
+                    <i class="fa-solid fa-user-shield"></i>
                     <div>
-                        <h4>Professional Integrity</h4>
-                        <p>We uphold the highest ethical standards in every test and medical consultation.</p>
+                        <h4>Ethical Integrity</h4>
+                        <p>Honesty and transparency are the pillars of our practice. No compromises on medical ethics.</p>
                     </div>
                 </div>
                 <div class="commitment-item">
-                    <i class="fa-solid fa-heart-pulse"></i>
+                    <i class="fa-solid fa-lock"></i>
                     <div>
-                        <h4>Patient Care</h4>
-                        <p>Respectful, compassionate, and confidential service for every single client.</p>
-                    </div>
-                </div>
-                <div class="commitment-item">
-                    <i class="fa-solid fa-user-graduate"></i>
-                    <div>
-                        <h4>Support for Youths</h4>
-                        <p>Helping Nepali youths meet foreign employment medical requirements efficiently.</p>
-                    </div>
-                </div>
-                <div class="commitment-item">
-                    <i class="fa-solid fa-arrows-rotate"></i>
-                    <div>
-                        <h4>Continuous Improvement</h4>
-                        <p>Adopting modern technologies and best practices to serve you better every day.</p>
+                        <h4>Privacy & Safety</h4>
+                        <p>Your medical data and personal information are handled with the highest level of confidentiality.</p>
                     </div>
                 </div>
             </div>
@@ -418,10 +430,10 @@
             </div>
 
             <div class="footer-section">
-                <h3>Contact Details</h3>
+                <h3>Connect With Us</h3>
                 <div class="contact-item">
                     <i class="fa-solid fa-phone"></i>
-                    <span>+977 -1- 4974339</span>
+                    <span>+977-1-4974339</span>
                 </div>
                 <div class="contact-item">
                     <i class="fa-solid fa-mobile-screen"></i>
@@ -429,7 +441,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>info.greenstar@...</span>
+                    <span>greenstar.diagnostic@gmail.com</span>
                 </div>
             </div>
 

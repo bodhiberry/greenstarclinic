@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenstar Clinic & Diagnostic Center | Excellence in Diagnostics</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
         :root {
             --primary-green: #2d6a4f;
@@ -50,16 +52,13 @@
             margin-right: 12px;
         }
 
-        .logo-placeholder {
-            width: 32px;
-            height: 32px;
-            background-color: var(--secondary-blue);
-            border-radius: 50%;
+        /* FIX 2: Better Logo Container */
+        .logo-box {
+            width: 35px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 0.9rem;
         }
 
         nav ul {
@@ -85,9 +84,8 @@
             color: var(--primary-green);
         }
 
-        /* --- Hero Section with Full Image --- */
+        /* --- Hero Section --- */
         .welcome-hero {
-            /* Replace the URL below with your actual image file path */
             background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
             min-height: 85vh;
             position: relative;
@@ -122,7 +120,6 @@
             font-size: 1.8rem;
             font-weight: 400;
             margin-bottom: 1.5rem;
-            color: var(--white);
         }
 
         .description {
@@ -132,12 +129,10 @@
             opacity: 0.95;
         }
 
-        /* --- Info Cards (Hours & Location) --- */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
-            margin-top: 20px;
         }
 
         .info-card {
@@ -147,26 +142,14 @@
             border-radius: 12px;
             border-top: 4px solid var(--accent-green);
             text-align: left;
-            transition: transform 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
         }
 
         .info-card h3 {
             margin-top: 0;
             color: var(--accent-green);
-            font-size: 1.3rem;
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .info-card p {
-            margin: 8px 0;
-            font-size: 1rem;
         }
 
         /* --- Footer --- */
@@ -187,7 +170,6 @@
         .footer-section h3 {
             color: var(--accent-green);
             margin-bottom: 20px;
-            font-size: 1.2rem;
         }
 
         .footer-links {
@@ -202,35 +184,38 @@
         .footer-links a {
             color: #d8f3dc;
             text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary-blue);
-            padding-left: 5px;
         }
 
         .contact-details p {
             margin: 10px 0;
-            font-size: 0.95rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
+        /* FIX 3: Robust Social Icons CSS */
         .social-icons {
             margin-top: 20px;
+            display: flex;
+            gap: 15px;
         }
 
         .social-icons a {
             color: white;
-            font-size: 1.4rem;
-            margin-right: 20px;
-            transition: color 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
         .social-icons a:hover {
-            color: var(--accent-green);
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
         }
 
         .copyright {
@@ -240,16 +225,9 @@
             color: #74c69d;
         }
 
-        /* --- Responsive Design --- */
         @media (max-width: 992px) {
             .info-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2.2rem; }
             header { flex-direction: column; gap: 15px; }
-        }
-
-        @media (max-width: 600px) {
-            nav ul { flex-wrap: wrap; justify-content: center; }
-            nav ul li { margin: 5px 10px; }
         }
     </style>
 </head>
@@ -258,8 +236,11 @@
     <header>
         <div class="brand-container">
             <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
-            <div class="logo-placeholder">
-                <i class="fas fa-star"></i>
+            <div class="logo-box">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5L61.7 34.3H92.7L67.6 52.4L77.3 81.7L50 63.6L22.7 81.7L32.4 52.4L7.3 34.3H38.3L50 5Z" fill="#0077b6"/>
+                    <circle cx="50" cy="50" r="10" fill="white"/>
+                </svg>
             </div>
         </div>
         <nav>
@@ -285,12 +266,12 @@
                 
                 <div class="info-grid">
                     <div class="info-card">
-                        <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                        <h3><i class="fa-solid fa-clock"></i> Opening Hours</h3>
                         <p><strong>Everyday:</strong> 08:30 AM – 05:00 PM</p>
                         <p><strong>Weekends & Public Holidays:</strong> 08:30 AM – 02:00 PM</p>
                     </div>
                     <div class="info-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
                         <p>Kathmandu Metropolitan City – Ward No. 03,<br>Basundhara, Kathmandu</p>
                     </div>
                 </div>
@@ -314,12 +295,28 @@
             <div class="footer-section">
                 <h3>Contact Details</h3>
                 <div class="contact-details">
-                    <p><i class="fas fa-phone"></i> +977 -1- 4974339</p>
-                    <p><i class="fas fa-mobile-alt"></i> +977 9764582339</p>
-                    <p><i class="fas fa-envelope"></i> info.greenstar@...</p>
-                    <p><i class="fas fa-envelope"></i> greenstar.diagnostic@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +977 -1- 4974339</p>
+                    <p><i class="fa-solid fa-mobile-screen-button"></i> +977 9764582339</p>
+                    <p><i class="fa-solid fa-envelope"></i> info.greenstar@...</p>
+                    <p><i class="fa-solid fa-envelope"></i> greenstar.diagnostic@gmail.com</p>
                 </div>
             </div>
 
             <div class="footer-section">
-                <h3>Connect
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics.
+        </div>
+    </footer>
+
+</body>
+</html>

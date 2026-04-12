@@ -1,283 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greenstar Clinic & Diagnostic Center | Excellence in Diagnostics</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-green: #2d6a4f;
-            --secondary-blue: #0077b6;
-            --accent-green: #95d5b2;
-            --light-bg: #f0f9ff;
-            --text-dark: #1b4332;
-            --white: #ffffff;
-            --overlay-blue: rgba(0, 48, 73, 0.8);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenstar Clinic & Diagnostic Center</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--light-bg);
-        }
+<style>
+:root {
+    --primary-green: #2d6a4f;
+    --secondary-blue: #0077b6;
+    --accent-green: #95d5b2;
+    --light-bg: #f0f9ff;
+    --text-dark: #1b4332;
+    --white: #ffffff;
+}
 
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        /* --- Header & Navigation --- */
-        header {
-            background-color: var(--white);
-            padding: 0.8rem 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height:1.6;
+}
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+h1,h2,h3 { font-family:'Poppins',sans-serif; }
 
-        .clinic-logo {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-        }
+/* Header */
+header {
+    background:#fff;
+    padding:12px 4%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-        .brand-name {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            line-height: 1.2;
-        }
+.brand {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-        .brand-slogan {
-            font-size: 0.75rem;
-            color: var(--secondary-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.brand img {
+    width:45px;
+}
 
-        #mobile-menu { display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary-green); }
+.brand-name {
+    font-weight:700;
+    color:var(--primary-green);
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+/* Hamburger */
+.menu-toggle {
+    font-size:1.5rem;
+    cursor:pointer;
+    display:block;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--secondary-blue);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
+/* Nav */
+nav {
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:none;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+}
 
-        nav ul li a:hover { color: var(--primary-green); }
+nav.active { display:flex; }
 
-        /* --- Hero Section --- */
-        .welcome-hero {
-            background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
+nav a {
+    text-decoration:none;
+    color:var(--secondary-blue);
+    padding:10px;
+    font-weight:600;
+}
 
-        .hero-overlay {
-            background: var(--overlay-blue);
-            width: 100%;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 6%;
-        }
+/* Hero */
+.hero {
+    background:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') center/cover;
+}
 
-        .hero-content {
-            max-width: 1000px;
-            text-align: center;
-            color: var(--white);
-        }
+.hero-overlay {
+    background:rgba(0,0,0,0.7);
+    padding:60px 4%;
+    text-align:center;
+    color:#fff;
+}
 
-        .hero-content h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-green);
-        }
+.hero h1 {
+    font-size:1.8rem;
+    color:var(--accent-green);
+}
 
-        .description {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            opacity: 0.85;
-        }
+.hero p {
+    margin-top:10px;
+}
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
+/* Sections */
+section {
+    padding:50px 4%;
+    text-align:center;
+}
 
-        .info-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid var(--accent-green);
-            text-align: left;
-        }
+.container {
+    max-width:1100px;
+    margin:auto;
+}
 
-        .info-card h3 { color: var(--accent-green); margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
+/* Cards */
+.grid {
+    display:grid;
+    gap:20px;
+}
 
-        /* --- MIDDLE CONTENT: Services Section --- */
-        .services-preview {
-            padding: 80px 6%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.card {
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
 
-        .section-title {
-            color: var(--primary-green);
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 15px;
-        }
+/* Footer */
+footer {
+    background:#05140f;
+    color:#fff;
+    text-align:center;
+    padding:30px;
+}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-blue);
-        }
+/* Tablet */
+@media(min-width:768px){
+    .menu-toggle { display:none; }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+    nav {
+        position:static;
+        display:flex;
+        flex-direction:row;
+        gap:20px;
+        width:auto;
+        padding:0;
+    }
 
-        .service-item {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
+    .hero h1 { font-size:2.5rem; }
 
-        .service-item:hover { transform: translateY(-10px); }
+    .grid-2 { grid-template-columns:1fr 1fr; }
+    .grid-3 { grid-template-columns:repeat(3,1fr); }
+}
 
-        .service-item i {
-            font-size: 2.5rem;
-            color: var(--secondary-blue);
-            margin-bottom: 20px;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #05140f;
-            color: var(--white);
-            padding: 70px 6% 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-section h3 { color: var(--accent-green); margin-bottom: 25px; text-transform: uppercase; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #b7e4c7; text-decoration: none; transition: 0.3s; }
-        .footer-links a:hover { color: var(--white); padding-left: 5px; }
-
-        .contact-item { display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; }
-        .contact-item i { color: var(--secondary-blue); }
-
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-btn {
-            width: 40px; height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; color: white; text-decoration: none; transition: 0.3s;
-        }
-        .social-btn:hover { background: var(--secondary-blue); transform: translateY(-3px); }
-
-        .copyright {
-            text-align: center; padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem; color: #74c69d;
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 992px) {
-            #mobile-menu { display: block; }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%; left: 0; width: 100%;
-                background: white; padding: 20px;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-            }
-            nav ul.active { display: flex; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .info-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+/* Desktop */
+@media(min-width:1024px){
+    .hero h1 { font-size:3rem; }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="brand-container">
-            <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
-            <div class="brand-text">
-                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
-                <span class="brand-slogan">Excellence in Diagnostics</span>
-            </div>
-        </div>
-        <div id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <nav>
-            <ul id="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="brand">
+        <img src="logo.jpg" alt="">
+        <span class="brand-name">Greenstar Clinic</span>
+    </div>
 
-    <section class="welcome-hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1>Welcome to Greenstar Clinic & Diagnostic Center</h1>
-                <h2>Experts in Diagnostics You Can Trust</h2>
-                <p class="description">
-                    We provide accurate, reliable, and timely diagnostic services using advanced technology and skilled professionals. 
-                    Our commitment to precision ensures you
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-overlay">
+        <h1>Greenstar Clinic & Diagnostic Center</h1>
+        <p>Accurate, Reliable & Fast Diagnostic Services</p>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>We provide high-quality diagnostic services using modern technology and skilled professionals.</p>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="grid grid-3">
+            <div class="card">Medical Tests for Foreign Employment</div>
+            <div class="card">Fast & Accurate Reports</div>
+            <div class="card">Advanced Laboratory Equipment</div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="grid grid-3">
+            <div class="card">Image 1</div>
+            <div class="card">Image 2</div>
+            <div class="card">Image 3</div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>📍 Basundhara, Kathmandu</p>
+        <p>📞 +977-9764582339</p>
+        <p>📧 greenstar.diagnostic@gmail.com</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Greenstar Clinic & Diagnostic Center</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

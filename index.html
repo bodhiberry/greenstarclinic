@@ -1,108 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Green Star Clinic</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenstar Clinic & Diagnostic Center | Excellence in Diagnostics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --secondary-blue: #0077b6;
+            --accent-green: #95d5b2;
+            --light-bg: #f0f9ff;
+            --text-dark: #1b4332;
+            --white: #ffffff;
+            --overlay-blue: rgba(0, 48, 73, 0.75);
+        }
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background-color: #0b8f4d;
-      color: white;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .nav-links a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    }
+        .brand-container {
+            display: flex;
+            align-items: center;
+        }
 
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-right: 12px;
+        }
 
-    /* Main Section */
-    .main {
-      text-align: center;
-      padding: 60px 20px;
-    }
+        .logo-placeholder {
+            width: 32px;
+            height: 32px;
+            background-color: var(--secondary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+        }
 
-    .main img {
-      width: 300px;
-      max-width: 90%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Footer */
-    .footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+        nav ul li {
+            margin-left: 25px;
+        }
 
-    .footer a {
-      color: #0b8f4d;
-      margin: 0 10px;
-      text-decoration: none;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        /* --- Hero Section with Full Image --- */
+        .welcome-hero {
+            /* Replace the URL below with your actual image file path */
+            background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            min-height: 85vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .hero-overlay {
+            background: var(--overlay-blue);
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 5%;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-green);
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        /* --- Info Cards (Hours & Location) --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-green);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #081c15;
+            color: var(--white);
+            padding: 60px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(149, 213, 178, 0.2);
+            padding-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-green);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #d8f3dc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-blue);
+            padding-left: 5px;
+        }
+
+        .contact-details p {
+            margin: 10px 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.4rem;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-green);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: #74c69d;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 15px; }
+        }
+
+        @media (max-width: 600px) {
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 5px 10px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- Top Navbar -->
-  <div class="navbar">
-    <div class="logo">Green Star Clinic</div>
-    <div class="nav-links">
-      <a href="#">About Us</a>
-      <a href="#">Our Services</a>
-      <a href="#">Contact Us</a>
-    </div>
-  </div>
+    <header>
+        <div class="brand-container">
+            <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
+            <div class="logo-placeholder">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Main Content -->
-  <div class="main">
-    <h1>Welcome to Green Star Clinic</h1>
-    <p>Your trusted healthcare partner. We provide quality medical services with care and professionalism.</p>
-    
-    <img src="photos/green-star.jpg" alt="Clinic Image" style="width: 100%; height: auto;">
-  </div>
+    <section class="welcome-hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Welcome to Greenstar Clinic & Diagnostic Center</h1>
+                <h2>Experts in Diagnostics You Can Trust</h2>
+                <p class="description">
+                    We provide accurate, reliable, and timely diagnostic services using advanced technology and skilled professionals. 
+                    Our commitment to precision ensures you get results you can trust for better healthcare decisions.
+                </p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                        <p><strong>Everyday:</strong> 08:30 AM – 05:00 PM</p>
+                        <p><strong>Weekends & Public Holidays:</strong> 08:30 AM – 02:00 PM</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <p>Kathmandu Metropolitan City – Ward No. 03,<br>Basundhara, Kathmandu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>📍 Kathmandu, Nepal</p>
-    <p>📞 +977-9800000000 | ✉ info@greenstarclinic.com</p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
 
-    <div>
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">WhatsApp</a>
-    </div>
+            <div class="footer-section">
+                <h3>Contact Details</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> +977 -1- 4974339</p>
+                    <p><i class="fas fa-mobile-alt"></i> +977 9764582339</p>
+                    <p><i class="fas fa-envelope"></i> info.greenstar@...</p>
+                    <p><i class="fas fa-envelope"></i> greenstar.diagnostic@gmail.com</p>
+                </div>
+            </div>
 
-    <p style="margin-top:10px;">© 2026 Green Star Clinic. All rights reserved.</p>
-  </div>
-
-</body>
-</html>
+            <div class="footer-section">
+                <h3>Connect

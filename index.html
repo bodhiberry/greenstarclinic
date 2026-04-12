@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenstar Clinic & Diagnostic Center | Excellence in Diagnostics</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
@@ -15,26 +17,34 @@
             --light-bg: #f0f9ff;
             --text-dark: #1b4332;
             --white: #ffffff;
-            --overlay-blue: rgba(0, 48, 73, 0.75);
+            --overlay-blue: rgba(0, 48, 73, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--light-bg);
         }
 
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
         /* --- Header & Navigation --- */
         header {
             background-color: var(--white);
-            padding: 1rem 5%;
+            padding: 0.8rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -43,41 +53,48 @@
         .brand-container {
             display: flex;
             align-items: center;
+            gap: 15px;
+        }
+
+        .clinic-logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
         }
 
         .brand-name {
-            font-size: 1.4rem;
-            font-weight: bold;
+            font-size: 1.35rem;
+            font-weight: 700;
             color: var(--primary-green);
-            margin-right: 12px;
+            line-height: 1.2;
         }
 
-        /* FIX 2: Better Logo Container */
-        .logo-box {
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .brand-slogan {
+            font-size: 0.75rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-left: 25px;
+            gap: 25px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--secondary-blue);
             font-weight: 600;
-            transition: color 0.3s;
             font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
@@ -88,11 +105,9 @@
         .welcome-hero {
             background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
             min-height: 85vh;
-            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--white);
+            position: relative;
         }
 
         .hero-overlay {
@@ -102,79 +117,96 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 5%;
+            padding: 60px 6%;
         }
 
         .hero-content {
             max-width: 1000px;
             text-align: center;
+            color: var(--white);
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
             color: var(--accent-green);
+            line-height: 1.1;
         }
 
         .hero-content h2 {
             font-size: 1.8rem;
             font-weight: 400;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         .description {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            opacity: 0.95;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.85;
         }
 
+        /* --- Info Cards --- */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 30px;
         }
 
         .info-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            padding: 25px;
-            border-radius: 12px;
-            border-top: 4px solid var(--accent-green);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-green);
             text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .info-card h3 {
-            margin-top: 0;
             color: var(--accent-green);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
         }
 
         /* --- Footer --- */
         footer {
-            background-color: #081c15;
+            background-color: #05140f;
             color: var(--white);
-            padding: 60px 5% 20px;
+            padding: 70px 6% 30px;
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            border-bottom: 1px solid rgba(149, 213, 178, 0.2);
-            padding-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-section h3 {
             color: var(--accent-green);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .footer-links {
             list-style: none;
-            padding: 0;
         }
 
         .footer-links li {
@@ -182,52 +214,66 @@
         }
 
         .footer-links a {
-            color: #d8f3dc;
-            text-decoration: none;
-        }
-
-        .contact-details p {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* FIX 3: Robust Social Icons CSS */
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #b7e4c7;
             text-decoration: none;
             transition: 0.3s;
         }
 
-        .social-icons a:hover {
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #d8f3dc;
+        }
+
+        .contact-item i {
+            color: var(--secondary-blue);
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
             background: var(--secondary-blue);
             transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 25px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.85rem;
             color: #74c69d;
         }
 
+        /* --- Responsive Design --- */
         @media (max-width: 992px) {
+            header { flex-direction: column; gap: 20px; text-align: center; }
+            .hero-content h1 { font-size: 2.2rem; }
             .info-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -235,12 +281,10 @@
 
     <header>
         <div class="brand-container">
-            <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
-            <div class="logo-box">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5L61.7 34.3H92.7L67.6 52.4L77.3 81.7L50 63.6L22.7 81.7L32.4 52.4L7.3 34.3H38.3L50 5Z" fill="#0077b6"/>
-                    <circle cx="50" cy="50" r="10" fill="white"/>
-                </svg>
+            <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
+            <div class="brand-text">
+                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
+                <span class="brand-slogan">Excellence in Diagnostics</span>
             </div>
         </div>
         <nav>
@@ -266,13 +310,14 @@
                 
                 <div class="info-grid">
                     <div class="info-card">
-                        <h3><i class="fa-solid fa-clock"></i> Opening Hours</h3>
+                        <h3><i class="fa-solid fa-clock-rotate-left"></i> Opening Hours</h3>
                         <p><strong>Everyday:</strong> 08:30 AM – 05:00 PM</p>
                         <p><strong>Weekends & Public Holidays:</strong> 08:30 AM – 02:00 PM</p>
                     </div>
                     <div class="info-card">
                         <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
-                        <p>Kathmandu Metropolitan City – Ward No. 03,<br>Basundhara, Kathmandu</p>
+                        <p>Kathmandu Metropolitan City – Ward No. 03,</p>
+                        <p>Basundhara, Kathmandu, Nepal</p>
                     </div>
                 </div>
             </div>
@@ -280,41 +325,52 @@
     </section>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-grid">
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3>Quick Navigation</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Contact Details</h3>
-                <div class="contact-details">
-                    <p><i class="fa-solid fa-phone"></i> +977 -1- 4974339</p>
-                    <p><i class="fa-solid fa-mobile-screen-button"></i> +977 9764582339</p>
-                    <p><i class="fa-solid fa-envelope"></i> info.greenstar@...</p>
-                    <p><i class="fa-solid fa-envelope"></i> greenstar.diagnostic@gmail.com</p>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+977 -1- 4974339</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>+977 9764582339</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info.greenstar@...</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <span>greenstar.diagnostic@gmail.com</span>
                 </div>
             </div>
 
             <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <h3>Follow Our Updates</h3>
+                <p style="font-size: 0.85rem; color: #b7e4c7; margin-bottom: 15px;">Stay connected for health tips and news.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
         </div>
         
         <div class="copyright">
-            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics.
+            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics. All Rights Reserved.
         </div>
     </footer>
 

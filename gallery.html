@@ -6,7 +6,6 @@
     <title>Gallery | Greenstar Clinic & Diagnostic Center</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
@@ -30,11 +29,10 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--light-bg);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-        }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 
         /* --- Header & Navigation --- */
         header {
@@ -53,24 +51,32 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            z-index: 1001;
         }
 
         .clinic-logo {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
 
         .brand-name {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary-green);
-            line-height: 1.2;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+            z-index: 1001;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
             gap: 25px;
         }
 
@@ -82,24 +88,20 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--primary-green);
-        }
+        nav ul li a:hover { color: var(--primary-green); }
 
         /* --- Page Header --- */
-        .page-header {
+        .page-title-area {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-blue) 100%);
-            padding: 60px 6%;
+            padding: 80px 6%;
             color: white;
             text-align: center;
         }
 
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+        .page-title-area h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 10px; }
+        .page-title-area p { opacity: 0.9; font-size: 1.1rem; }
 
-        /* --- Gallery Grid --- */
+        /* --- Gallery Section --- */
         .gallery-container {
             max-width: 1200px;
             margin: 60px auto;
@@ -108,119 +110,98 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .gallery-card {
             background: var(--white);
-            aspect-ratio: 4 / 3;
-            cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
 
-        .gallery-item img {
+        .gallery-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+
+        .image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover img {
+        .gallery-card:hover .image-box img {
             transform: scale(1.1);
         }
 
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            color: white;
-            padding: 15px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .caption-box {
+            padding: 20px;
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
         }
 
-        .gallery-item:hover .overlay {
-            opacity: 1;
+        .caption-box h3 {
+            font-size: 1rem;
+            color: var(--primary-green);
+            font-weight: 600;
         }
 
         /* --- Footer --- */
         footer {
             background-color: #05140f;
             color: var(--white);
-            padding: 70px 6% 30px;
+            padding: 60px 6% 20px;
+            margin-top: 60px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
 
-        .footer-section h3 {
-            color: var(--accent-green);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #b7e4c7;
-            text-decoration: none;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-btn {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            transition: 0.3s;
-        }
-
-        .social-btn:hover {
-            background: var(--secondary-blue);
-        }
+        .footer-section h3 { color: var(--accent-green); margin-bottom: 20px; font-size: 1rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #b7e4c7; text-decoration: none; font-size: 0.9rem; }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
             color: #74c69d;
         }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 20px; }
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .menu-toggle { display: block; }
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+            nav ul.active { right: 0; }
+            header { padding: 1rem 6%; }
         }
     </style>
 </head>
@@ -229,22 +210,25 @@
     <header>
         <div class="brand-container">
             <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
-            <div class="brand-text">
-                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
-            </div>
+            <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
         </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <nav>
-            <ul>
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="page-header">
+    <section class="page-title-area">
         <h1>Photo Gallery</h1>
         <p>A glimpse into our modern facilities and professional environment.</p>
     </section>
@@ -252,31 +236,39 @@
     <main class="gallery-container">
         <div class="gallery-grid">
             
-            <div class="gallery-item">
-                <img src="photo/green-star.jpg" alt="Greenstar Clinic Facility">
-                <div class="overlay">
-                    <span>Greenstar Facility Overview</span>
+            <div class="gallery-card">
+                <div class="image-box">
+                    <img src="photo/green-star.jpg" alt="Clinic Exterior">
+                </div>
+                <div class="caption-box">
+                    <h3>Modern Facility Exterior</h3>
                 </div>
             </div>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1579152276502-5423bc46b79b?auto=format&fit=crop&w=600&q=80" alt="Laboratory Equipment">
-                <div class="overlay">
-                    <span>Advanced Lab Equipment</span>
+            <div class="gallery-card">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1579152276502-5423bc46b79b?auto=format&fit=crop&w=600&q=80" alt="Lab Equipment">
+                </div>
+                <div class="caption-box">
+                    <h3>High-Precision Diagnostics</h3>
                 </div>
             </div>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Consultation Room">
-                <div class="overlay">
-                    <span>Professional Consultation</span>
+            <div class="gallery-card">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Consultation Room">
+                </div>
+                <div class="caption-box">
+                    <h3>Comfortable Consultation Rooms</h3>
                 </div>
             </div>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=600&q=80" alt="Medical Testing">
-                <div class="overlay">
-                    <span>Precision Testing Services</span>
+            <div class="gallery-card">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=600&q=80" alt="Testing Area">
+                </div>
+                <div class="caption-box">
+                    <h3>Expert Medical Staff</h3>
                 </div>
             </div>
 
@@ -286,7 +278,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
-                <h3>Quick Navigation</h3>
+                <h3>Quick Access</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -295,37 +287,38 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
-                <h3>Contact Details</h3>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+977 -1- 4974339</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <span>+977 9764582339</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>info.greenstar@...</span>
-                </div>
+                <h3>Our Hours</h3>
+                <ul class="footer-links" style="color: #b7e4c7; font-size: 0.9rem;">
+                    <li>Sunday - Friday</li>
+                    <li>7:00 AM - 6:00 PM</li>
+                    <li style="margin-top: 10px; color: var(--accent-green);">Saturday: Closed</li>
+                </ul>
             </div>
-
             <div class="footer-section">
-                <h3>Follow Our Updates</h3>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <h3>Stay Connected</h3>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="#" style="color:white; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="color:white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color:white; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
-        
         <div class="copyright">
-            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics. All Rights Reserved.
+            © 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics.
         </div>
     </footer>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
 </body>
 </html>

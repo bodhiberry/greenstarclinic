@@ -6,8 +6,7 @@
     <title>Contact Us | Greenstar Clinic & Diagnostic Center</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
         :root {
@@ -30,11 +29,10 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--light-bg);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-        }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 
         /* --- Header & Navigation --- */
         header {
@@ -53,24 +51,32 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            z-index: 1001;
         }
 
         .clinic-logo {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
 
         .brand-name {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary-green);
-            line-height: 1.2;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+            z-index: 1001;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
             gap: 25px;
         }
 
@@ -82,193 +88,155 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--primary-green);
-        }
+        nav ul li a:hover { color: var(--primary-green); }
 
         /* --- Page Header --- */
-        .page-header {
+        .page-title-area {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-blue) 100%);
-            padding: 60px 6%;
+            padding: 80px 6%;
             color: white;
             text-align: center;
         }
 
-        .page-header h1 {
-            font-size: 2.5rem;
-        }
+        .page-title-area h1 { font-size: 2.8rem; letter-spacing: -1px; }
 
         /* --- Contact Section --- */
         .contact-container {
             max-width: 1100px;
-            margin: 60px auto;
+            margin: -40px auto 60px;
             padding: 0 6%;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
+            gap: 30px;
+            position: relative;
+            z-index: 10;
         }
 
-        .contact-info-panel {
+        .info-panel {
             background: var(--primary-green);
             color: white;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        .contact-info-panel h2 {
+        .info-panel h2 {
+            color: var(--accent-green);
             margin-bottom: 30px;
             font-size: 1.8rem;
-            color: var(--accent-green);
         }
 
         .info-item {
             display: flex;
-            align-items: center;
             gap: 20px;
             margin-bottom: 25px;
         }
 
         .info-item i {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent-green);
-            width: 30px;
+            margin-top: 5px;
         }
 
-        .info-item p {
-            font-size: 1rem;
-        }
+        .info-item h4 { font-size: 0.9rem; color: var(--accent-green); text-transform: uppercase; }
 
-        /* --- Contact Form --- */
-        .contact-form-card {
+        .form-card {
             background: var(--white);
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
         }
 
-        .contact-form-card h2 {
-            margin-bottom: 25px;
-            color: var(--primary-green);
-        }
+        .form-card h2 { color: var(--primary-green); margin-bottom: 25px; }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.85rem; }
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            border: 2px solid #eef2f5;
+            border-radius: 10px;
             font-family: inherit;
-            transition: border-color 0.3s;
+            background: #f8fafc;
+            transition: 0.3s;
         }
 
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--secondary-blue);
+            background: white;
         }
 
         .submit-btn {
             background: var(--secondary-blue);
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
+            padding: 15px;
+            border-radius: 10px;
             font-weight: 700;
+            width: 100%;
             cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        .submit-btn:hover {
-            background: var(--primary-green);
-        }
+        .submit-btn:hover { background: var(--primary-green); transform: translateY(-2px); }
 
-        /* --- Map Section --- */
-        .map-section {
+        /* --- Map --- */
+        .map-wrapper {
             width: 100%;
-            height: 400px;
-            background: #e5e3df;
-            margin-top: 60px;
-            border-top: 5px solid var(--accent-green);
+            height: 450px;
+            background: #eee;
+            border-top: 10px solid var(--accent-green);
         }
 
         /* --- Footer --- */
         footer {
             background-color: #05140f;
             color: var(--white);
-            padding: 70px 6% 30px;
+            padding: 60px 6% 20px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
 
-        .footer-section h3 {
-            color: var(--accent-green);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #b7e4c7;
-            text-decoration: none;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-btn {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            transition: 0.3s;
-        }
-
-        .social-btn:hover {
-            background: var(--secondary-blue);
-        }
+        .footer-section h3 { color: var(--accent-green); margin-bottom: 20px; font-size: 1rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #b7e4c7; text-decoration: none; font-size: 0.9rem; }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
             color: #74c69d;
         }
 
-        @media (max-width: 850px) {
-            .contact-container { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 20px; }
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .menu-toggle { display: block; }
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+            nav ul.active { right: 0; }
+            .contact-container { grid-template-columns: 1fr; margin-top: 20px; }
+            .page-title-area h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -277,121 +245,137 @@
     <header>
         <div class="brand-container">
             <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
-            <div class="brand-text">
-                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
-            </div>
+            <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
         </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <nav>
-            <ul>
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="page-header">
-        <h1>Get In Touch</h1>
+    <section class="page-title-area">
+        <h1>Connect With Our Team</h1>
     </section>
 
-    <main class="contact-container">
-        
-        <aside class="contact-info-panel">
+    <div class="contact-container">
+        <aside class="info-panel">
             <h2>Contact Details</h2>
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <p>+977 -1- 4974339</p>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-mobile-screen"></i>
-                <p>+977 9764582339</p>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <p>info.greenstar@...</p>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <p>Basundhara, Ward No. 03,<br>Kathmandu, Nepal</p>
-            </div>
             
-            <div class="social-links">
-                <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <h4>Phone Number</h4>
+                    <p>+977 -1- 4974339</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div>
+                    <h4>Mobile Support</h4>
+                    <p>+977 9764582339</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-envelope-open-text"></i>
+                <div>
+                    <h4>Email Address</h4>
+                    <p>greenstar.diagnostic@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <div>
+                    <h4>Our Location</h4>
+                    <p>Basundhara, Ward No. 03,<br>Kathmandu, Nepal</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-top: 40px;">
+                <a href="#" style="color:var(--accent-green); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color:var(--accent-green); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" style="color:var(--accent-green); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
             </div>
         </aside>
 
-        <section class="contact-form-card">
-            <h2>Send us a Message</h2>
+        <section class="form-card">
+            <h2>Send a Quick Message</h2>
             <form action="#">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="John Doe" required>
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" placeholder="john@example.com" required>
                 </div>
                 <div class="form-group">
                     <label>Subject</label>
-                    <input type="text" placeholder="Purpose of Contact">
+                    <input type="text" placeholder="Inquiry about Lab Services">
                 </div>
                 <div class="form-group">
-                    <label>Message</label>
-                    <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                    <label>Your Message</label>
+                    <textarea rows="5" placeholder="Write your message here..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn">Deliver Message</button>
             </form>
         </section>
+    </div>
 
-    </main>
-
-    <section class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.1448873730245!2d85.328325!3d27.74365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb193b2a246835%3A0xc0c609c2a8f3b2!2sBasundhara%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <section class="map-wrapper">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.3323067406253!2d85.33333333333333!3d27.73333333333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1916e792468d%3A0x60037e937d12f388!2sBasundhara%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1625648937213!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
-                <h3>Quick Navigation</h3>
+                <h3>Navigation</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
-                <h3>Contact</h3>
-                <div class="info-item" style="color: #d8f3dc; font-size: 0.9rem;">
-                    <i class="fa-solid fa-phone" style="color: var(--secondary-blue);"></i>
-                    <span>+977 -1- 4974339</span>
-                </div>
-                <div class="info-item" style="color: #d8f3dc; font-size: 0.9rem;">
-                    <i class="fa-solid fa-envelope" style="color: var(--secondary-blue);"></i>
-                    <span>info.greenstar@...</span>
-                </div>
+                <h3>Service Hours</h3>
+                <ul class="footer-links" style="color: #b7e4c7; font-size: 0.9rem;">
+                    <li>Sun - Fri: 7:00 AM - 6:00 PM</li>
+                    <li>Sat: Closed (Emergency Only)</li>
+                </ul>
             </div>
-
             <div class="footer-section">
-                <h3>Stay Connected</h3>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
+                <h3>Official Registration</h3>
+                <p style="color: #74c69d; font-size: 0.85rem;">Registered under the Ministry of Health and Population, Nepal.</p>
             </div>
         </div>
-        
         <div class="copyright">
-            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics. All Rights Reserved.
+            &copy; 2026 Greenstar Clinic & Diagnostic Center. Excellence in Diagnostics.
         </div>
     </footer>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
 </body>
 </html>

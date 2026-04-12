@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Greenstar Clinic & Diagnostic Center</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --secondary-blue: #0077b6;
+            --accent-green: #95d5b2;
+            --light-bg: #f0f9ff;
+            --text-dark: #1b4332;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            padding: 0.8rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .clinic-logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+
+        .brand-slogan {
+            font-size: 0.75rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        /* --- Page Header --- */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-blue) 100%);
+            padding: 60px 6%;
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* --- Services Grid --- */
+        .services-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 6%;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--secondary-blue);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* --- Commitment Section --- */
+        .commitment-section {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 80px 6%;
+            margin-top: 80px;
+        }
+
+        .commitment-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .commitment-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .commitment-header h2 {
+            font-size: 2.2rem;
+            color: var(--accent-green);
+        }
+
+        .commitment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .commitment-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .commitment-item i {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .commitment-item h4 {
+            margin-bottom: 8px;
+            color: var(--accent-green);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #05140f;
+            color: var(--white);
+            padding: 70px 6% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-green);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #b7e4c7;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #d8f3dc;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #74c69d;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            .commitment-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-container">
+            <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
+            <div class="brand-text">
+                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
+                <span class="brand-slogan">Excellence in Diagnostics</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>At Greenstar Clinic & Diagnostic Center Pvt. Ltd., we provide quality medical examination services designed to meet the requirements of foreign employment with accuracy and efficiency.</p>
+    </section>
+
+    <main class="services-container">
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-passport"></i>
+                <h3>Foreign Employment Exams</h3>
+                <p>Reliable and high-quality medical tests tailored specifically for those seeking career opportunities abroad.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-file-medical"></i>
+                <h3>Compliant Reports</h3>
+                <p>Fast, accurate, and internationally compliant diagnostic reports that meet all regulatory standards.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Timely Delivery</h3>
+                <p>Enjoy hassle-free service with our commitment to assured on-time report delivery every single time.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-brands fa-whatsapp"></i>
+                <h3>Digital Delivery</h3>
+                <p>Get your reports delivered conveniently via Email and WhatsApp as soon as they are ready.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fa-solid fa-microscope"></i>
+                <h3>Modern Technology</h3>
+                <p>We use advanced laboratory equipment and the latest modern diagnostic technology for precision results.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="commitment-section">
+        <div class="commitment-content">
+            <div class="commitment-header">
+                <h2>Our Commitment</h2>
+                <p>We take pride in being your trusted partner for medical examinations.</p>
+            </div>
+
+            <div class="commitment-list">
+                <div class="commitment-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <div>
+                        <h4>Quality Service</h4>
+                        <p>Accurate, reliable, and timely medical examinations are our top priority.</p>
+                    </div>
+                </div>
+                <div class="commitment-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h4>Professional Integrity</h4>
+                        <p>We uphold the highest ethical standards in every test and medical consultation.</p>
+                    </div>
+                </div>
+                <div class="commitment-item">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <div>
+                        <h4>Patient Care</h4>
+                        <p>Respectful, compassionate, and confidential service for every single client.</p>
+                    </div>
+                </div>
+                <div class="commitment-item">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div>
+                        <h4>Support for Youths</h4>
+                        <p>Helping Nepali youths meet foreign employment medical requirements efficiently.</p>
+                    </div>
+                </div>
+                <div class="commitment-item">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <div>
+                        <h4>Continuous Improvement</h4>
+                        <p>Adopting modern technologies and best practices to serve you better every day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Quick Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Details</h3>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+977 -1- 4974339</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>+977 9764582339</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info.greenstar@...</span>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Our Updates</h3>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

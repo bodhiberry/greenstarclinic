@@ -6,7 +6,6 @@
     <title>About Us | Greenstar Clinic & Diagnostic Center</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
@@ -30,11 +29,10 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--light-bg);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-        }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 
         /* --- Header & Navigation --- */
         header {
@@ -53,36 +51,33 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            z-index: 1001;
         }
 
         .clinic-logo {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
 
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
         .brand-name {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary-green);
-            line-height: 1.2;
         }
 
-        .brand-slogan {
-            font-size: 0.75rem;
-            color: var(--secondary-blue);
-            font-weight: 600;
-            text-transform: uppercase;
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+            z-index: 1001;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
             gap: 25px;
         }
 
@@ -94,287 +89,70 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--primary-green);
-        }
+        nav ul li a:hover { color: var(--primary-green); }
 
-        /* --- Page Title Section --- */
-        .page-header {
+        /* --- Page Header --- */
+        .page-title-area {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-blue) 100%);
-            padding: 60px 6%;
+            padding: 80px 6%;
             color: white;
             text-align: center;
         }
 
-        .page-header h1 {
-            font-size: 2.5rem;
-        }
+        .page-title-area h1 { font-size: 2.8rem; letter-spacing: -1px; }
 
-        /* --- Main Content Layout --- */
-        .container {
-            max-width: 1000px;
-            margin: 50px auto;
+        /* --- Content Layout --- */
+        .main-container {
+            max-width: 1100px;
+            margin: -40px auto 60px;
             padding: 0 6%;
+            position: relative;
+            z-index: 10;
         }
 
-        .content-section {
+        .card {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
             margin-bottom: 40px;
         }
 
-        .content-section h2 {
+        .card h2 {
             color: var(--primary-green);
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--accent-green);
-            display: inline-block;
-            padding-bottom: 5px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .content-section p {
+        .card p {
             margin-bottom: 20px;
             font-size: 1.05rem;
             color: #444;
             text-align: justify;
         }
 
-        /* --- Message Box --- */
+        /* --- Quote Styling --- */
         .message-box {
-            background-color: #f8fdfa;
-            border-left: 6px solid var(--primary-green);
-            padding: 30px;
-            position: relative;
+            border-top: 8px solid var(--accent-green);
         }
 
-        .message-box i.quote-icon {
-            font-size: 2rem;
+        .quote-icon {
+            font-size: 3rem;
             color: var(--accent-green);
-            opacity: 0.5;
-            margin-bottom: 15px;
+            opacity: 0.3;
+            margin-bottom: -20px;
         }
 
         .signature {
-            margin-top: 30px;
+            margin-top: 40px;
+            padding-top: 25px;
             border-top: 1px solid #eee;
-            padding-top: 20px;
         }
 
         .signature strong {
             display: block;
             color: var(--primary-green);
-            font-size: 1.2rem;
-        }
-
-        .signature span {
-            color: var(--secondary-blue);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #05140f;
-            color: var(--white);
-            padding: 70px 6% 30px;
-            margin-top: 80px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-section h3 {
-            color: var(--accent-green);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #b7e4c7;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-            padding-left: 5px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #d8f3dc;
-        }
-
-        .contact-item i {
-            color: var(--secondary-blue);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-btn {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-btn:hover {
-            background: var(--secondary-blue);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
-            color: #74c69d;
-        }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 20px; }
-            .content-section { padding: 25px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="brand-container">
-            <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
-            <div class="brand-text">
-                <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
-                <span class="brand-slogan">Excellence in Diagnostics</span>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="page-header">
-        <h1>About Us</h1>
-    </section>
-
-    <div class="container">
-        <div class="content-section">
-            <h2>Our Clinic</h2>
-            <p>
-                <strong>Greenstar Clinic & Diagnostic Center Pvt. Ltd.</strong> is a trusted healthcare provider dedicated to delivering accurate, reliable, and timely diagnostic services. Located in Basundhara, Kathmandu, we specialize in medical examinations that meet both national and international standards, particularly for individuals seeking foreign employment.
-            </p>
-            <p>
-                With modern diagnostic technology and a team of experienced medical professionals, we focus on precision, quality, and patient-centered care. Our goal is to ensure every client receives transparent, efficient, and dependable services in a respectful and professional environment.
-            </p>
-        </div>
-
-        <div class="content-section message-box">
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <h2>Message from the Chairperson</h2>
-            <p>It gives me great pleasure to welcome you to Greenstar Clinic and Diagnostic Center Pvt. Ltd.</p>
-            <p>
-                In recent years, foreign employment has become an important opportunity for many Nepali youths to build a better future for themselves and their families. Understanding this responsibility, Greenstar Clinic was established with a clear commitment—to provide quality, reliable, and ethical medical examination services that meet the requirements of foreign employment.
-            </p>
-            <p>
-                At Greenstar Clinic, we believe that accurate medical testing, professional integrity, and respectful patient care are the foundations of trust. Our team works diligently to ensure that every individual receives proper attention, transparent services, and dependable medical reports using modern diagnostic facilities.
-            </p>
-            <p>
-                We are dedicated not only to meeting regulatory standards but also to maintaining compassion, confidentiality, and efficiency in all our services. Our aim is to support Nepali youths in their journey abroad by ensuring their medical process is smooth, credible, and timely.
-            </p>
-            <p>
-                I would like to express my sincere gratitude to our clients for their trust and to our dedicated team for their continuous efforts. We remain committed to continuous improvement and to serving the community with professionalism and care.
-            </p>
-            <p>Thank you for choosing Greenstar Clinic and Diagnostic Center Pvt. Ltd.</p>
-            
-            <div class="signature">
-                <strong>Shankar Babu Karki</strong>
-                <span>Chairperson</span><br>
-                <span>Greenstar Clinic and Diagnostic Center Pvt. Ltd.</span><br>
-                <small>Kathmandu – Ward No. 3, Basundhara, Nepal</small>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Quick Navigation</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Details</h3>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+977 -1- 4974339</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <span>+977 9764582339</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>info.greenstar@...</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <span>greenstar.diagnostic@gmail.com</span>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Follow Our Updates</h3>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics. All Rights Reserved.
-        </div>
-    </footer>
-
-</body>
-</html>
+            font-size: 1.3rem;

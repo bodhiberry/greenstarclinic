@@ -312,11 +312,11 @@
             color: #74c69d;
         }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 1.5rem; }
-            nav ul { margin-top: 20px; gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .page-header h1 { font-size: 2.2rem; }
-            .commitment-item { padding: 20px; }
+         /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            header { flex-direction: column; gap: 20px; text-align: center; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .info-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>

@@ -36,6 +36,7 @@
 
      
         /* --- Header & Navigation --- */
+         /* --- Header & Navigation --- */
         header {
             background-color: var(--white);
             padding: 0.8rem 6%;
@@ -52,22 +53,35 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            z-index: 1001;
         }
 
         .clinic-logo {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             object-fit: contain;
+            border-radius: 4px;
         }
 
-        .brand-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-green);
+        .brand-text {
             display: flex;
             flex-direction: column;
         }
+
+        .brand-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+
+        .brand-slogan {
+            font-size: 0.75rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
 
         .menu-toggle {
             display: none;

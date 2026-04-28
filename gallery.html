@@ -59,6 +59,12 @@
             width: 55px;
             height: 55px;
             object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
         }
 
         .brand-name {
@@ -66,6 +72,14 @@
             font-weight: 700;
             color: var(--primary-green);
             line-height: 1.2;
+        }
+
+        .brand-slogan {
+            font-size: 0.75rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         nav ul {
@@ -231,6 +245,7 @@
             <img src="logo.jpg" alt="Greenstar Logo" class="clinic-logo">
             <div class="brand-text">
                 <span class="brand-name">Greenstar Clinic & Diagnostic Center</span>
+                <span class="brand-slogan">Excellence in Diagnostics</span>
             </div>
         </div>
         <nav>
@@ -239,7 +254,7 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>

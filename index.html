@@ -6,7 +6,6 @@
     <title>Greenstar Clinic & Diagnostic Center | Excellence in Diagnostics</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
@@ -33,11 +32,76 @@
             background-color: var(--light-bg);
         }
 
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
+        /* --- Popup Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            visibility: visible;
+            opacity: 1;
+            transition: 0.3s ease-in-out;
         }
 
-        /* --- Header & Navigation --- */
+        .modal-content {
+            position: relative;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+            max-width: 90%;
+            /* Container scales to image size but stays responsive */
+            width: 800px; 
+            box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-content img {
+            display: block;
+            width: 100%;
+            height: auto; /* Maintains aspect ratio */
+            border-radius: 4px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+
+        .close-modal:hover {
+            background: #cc0000;
+            transform: scale(1.1);
+        }
+
+        /* Class to hide the modal */
+        .modal-hidden {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* --- Existing Styles --- */
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
         header {
             background-color: var(--white);
             padding: 0.8rem 6%;
@@ -50,58 +114,16 @@
             z-index: 1000;
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .brand-container { display: flex; align-items: center; gap: 15px; }
+        .clinic-logo { width: 55px; height: 55px; object-fit: contain; border-radius: 4px; }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.35rem; font-weight: 700; color: var(--primary-green); line-height: 1.2; }
+        .brand-slogan { font-size: 0.75rem; color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .clinic-logo {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-            border-radius: 4px;
-        }
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav ul li a { text-decoration: none; color: var(--secondary-blue); font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        nav ul li a:hover { color: var(--primary-green); }
 
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-name {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            line-height: 1.2;
-        }
-
-        .brand-slogan {
-            font-size: 0.75rem;
-            color: var(--secondary-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--secondary-blue);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-green);
-        }
-
-        /* --- Hero Section --- */
         .welcome-hero {
             background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
             min-height: 85vh;
@@ -120,40 +142,12 @@
             padding: 60px 6%;
         }
 
-        .hero-content {
-            max-width: 1000px;
-            text-align: center;
-            color: var(--white);
-        }
+        .hero-content { max-width: 1000px; text-align: center; color: var(--white); }
+        .hero-content h1 { font-size: 3.2rem; margin-bottom: 1rem; color: var(--accent-green); line-height: 1.1; }
+        .hero-content h2 { font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; opacity: 0.9; }
+        .description { font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem; opacity: 0.85; }
 
-        .hero-content h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-green);
-            line-height: 1.1;
-        }
-
-        .hero-content h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            opacity: 0.85;
-        }
-
-        /* --- Info Cards --- */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .info-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -163,113 +157,27 @@
             text-align: left;
             transition: transform 0.3s ease;
         }
+        .info-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.15); }
+        .info-card h3 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
+        .info-card p { font-size: 0.95rem; margin-bottom: 8px; }
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
+        footer { background-color: #05140f; color: var(--white); padding: 70px 6% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+        .footer-section h3 { color: var(--accent-green); margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #b7e4c7; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--white); padding-left: 5px; }
 
-        .info-card h3 {
-            color: var(--accent-green);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .contact-item { display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #d8f3dc; }
+        .contact-item i { color: var(--secondary-blue); font-size: 1.1rem; }
 
-        .info-card p {
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-        }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-btn { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; transition: 0.3s; }
+        .social-btn:hover { background: var(--secondary-blue); transform: translateY(-3px); }
 
-        /* --- Footer --- */
-        footer {
-            background-color: #05140f;
-            color: var(--white);
-            padding: 70px 6% 30px;
-        }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #74c69d; }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-section h3 {
-            color: var(--accent-green);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #b7e4c7;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-            padding-left: 5px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #d8f3dc;
-        }
-
-        .contact-item i {
-            color: var(--secondary-blue);
-            font-size: 1.1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-btn {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-btn:hover {
-            background: var(--secondary-blue);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
-            color: #74c69d;
-        }
-
-        /* --- Responsive Design --- */
         @media (max-width: 992px) {
             header { flex-direction: column; gap: 20px; text-align: center; }
             .hero-content h1 { font-size: 2.2rem; }
@@ -278,6 +186,13 @@
     </style>
 </head>
 <body>
+
+    <div class="modal-overlay" id="noticeModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeBtn">&times;</button>
+            <img src="notice.jpg" alt="Notice" width="800" height="667">
+        </div>
+    </div>
 
     <header>
         <div class="brand-container">
@@ -293,7 +208,7 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
             </ul>
         </nav>
     </header>
@@ -347,7 +262,6 @@
                     <i class="fa-solid fa-mobile-screen"></i>
                     <span>+977 9764582339</span>
                 </div>
-              
                 <div class="contact-item">
                     <i class="fa-solid fa-envelope-open-text"></i>
                     <span>greenstar.diagnostic@gmail.com</span>
@@ -370,6 +284,23 @@
             &copy; 2026 Greenstar Clinic & Diagnostic Center — Excellence in Diagnostics. All Rights Reserved.
         </div>
     </footer>
+
+    <script>
+        const modal = document.getElementById('noticeModal');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // Function to close the modal
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('modal-hidden');
+        });
+
+        // Optional: Close modal if clicking outside the image
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('modal-hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
